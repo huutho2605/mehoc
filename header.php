@@ -23,7 +23,7 @@
     | <a href="/add_doc.php">Thêm tài liệu</a> | <a href="/add_qs.php">Thêm câu hỏi</a>
     | <a href="/profile.php">Tài khoản</a> | <a href="/process.php?logout">Đăng xuất<a> <br> <br>';
 } else {
-    echo '<div align="center"><a href="/login">ĐĂNG NHẬP</a> </div> <br <br>';
+    echo '<div align="center"><a href="/auth/login.php">ĐĂNG NHẬP</a> </div> <br <br>';
 }; 
 ?>
 <body>
