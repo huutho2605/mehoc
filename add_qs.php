@@ -5,6 +5,13 @@ if(!isset($_COOKIE['id_user'])){
     header('Location: https://mehoc.site/login');
 }
 
+$question = '';
+$answer_a = ''; 
+$answer_b = '';
+$answer_c = '';
+$answer_d = '';
+$solution = '';
+
 if(isset($_POST['add_qs'])){
     $question = $_POST['question'];
     $question = str_replace("'" , "\'"  , $question);

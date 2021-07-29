@@ -3,7 +3,7 @@
 if(isset($_POST['login'])){
   $username = $_POST['username'];
   $password = md5($_POST['password']);
-  $conn = mysqli_connect("localhost", "mehocxyz_root", "T26052k3h@", "mehocxyz_index");
+  $conn = mysqli_connect("localhost", "root", "mehoc@2020", "mehoc");
   $conn->set_charset("utf8");
   $sql = "SELECT * FROM account WHERE username='$username' and password='$password'";
   $conn->real_escape_string($sql);
@@ -16,11 +16,11 @@ if(isset($_POST['login'])){
           setcookie('id_user', $id_user, time() + (86400 * 30), "/");
           setcookie('username', $username, time() + (86400 * 30), "/");
           setcookie('fullname', $fullname, time() + (86400 * 30), "/");
-          header('Location: https://mehoc.site/index.php');
+          header('Location: /index.php');
       }
   } else {
       setcookie('error', $username, time() + 1, "/");
-      header('Location: https://mehoc.site/login/');
+      header('Location: /login/');
   }
   mysqli_close($conn);
 }
@@ -41,6 +41,7 @@ if(isset($_COOKIE['error'])){
   <input type="text" placeholder="Tên đăng nhập của bạn..." name="username"> <br> <br>
   <label>Mật khẩu: </label>
   <input type="password" placeholder="Mật khẩu của bạn..." name="password"> <br> <br>
-  <input type="submit" name="login" value="ĐĂNG NHẬP"> <input type="submit" name="register" value="ĐĂNG KÝ"> 
+  <input type="submit" name="login" value="ĐĂNG NHẬP"> <input type="button" onclick="window.location.href='/register'" value="ĐĂNG KÝ">
 </form>
+
 <?php include('footer.php'); ?>
