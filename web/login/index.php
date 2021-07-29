@@ -30,7 +30,7 @@ include('header.php'); ?>
 <?php 
 if(isset($_COOKIE['error'])){
   echo '<div class="alert alert-danger" role="alert">
-  Đăng nhập thất bại. Thông tin không chính xát!!!
+  Đăng nhập thất bại, thông tin không chính xác, vui lòng thử lại!
 </div>';
 }
 ?>
