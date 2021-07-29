@@ -1,7 +1,7 @@
 <?php include('header.php');
 
 if(!isset($_COOKIE['username'])){
-    header('Location: https://mehoc.site/login/');
+    header('Location: /auth/login.php');
 }
 
 if(isset($_GET['id'])){
@@ -32,7 +32,7 @@ if(isset($_GET['id'])){
         }
         echo '
             <div align="center">
-                <img src="icon/'.$avt.'"> <br>
+                <img src="icons/'.$avt.'"> <br>
                 <b>ID: </b> '.$id_user.' <br>
                 <b>Username: </b> '.$username.'<br>
                 <b>Họ và tên: </b> '.$full_name.'<br>

@@ -8,4 +8,4 @@ include ("header.php");
     <a href="/quiz">CÂU HỎI</a>
     <a href="doc.php">TÀI LIỆU</a>
     </div>
-<?php include('../footer.php') ?>
+<?php include('footer.php') ?>

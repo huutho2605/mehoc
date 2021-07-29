@@ -2,7 +2,7 @@
 <?php include('header.php');
 
 if(!isset($_COOKIE['username'])){
-    header('Location: https://mehoc.site/login/');
+    header('Location: /auth/login.php');
 }
     $id_user = $_COOKIE['id_user'];
     require_once('config.php');
