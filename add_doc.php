@@ -84,7 +84,7 @@ if(isset($_POST['upload_file'])){
     <option value="semester_2">HK2</option>
 </select> <br> <br>
 
-<label for="">Trường:</label>
+<label for="" style="text-align: center">Trường:</label>
 <input type="text" name="school" id="">
 
 <br> <br>

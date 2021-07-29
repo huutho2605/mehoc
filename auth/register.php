@@ -12,7 +12,7 @@ if(isset($_POST['register'])){
   $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secret_key&response=$response&remoteip=$userIP";
   $responsecheck = file_get_contents($url);
   $responsecheck = json_decode($responsecheck);
-  if($responsecheck->success){} else {echo "<p class='text-danger text-center'><b>Hãy xát nhận bạn không phải là robot!!!</b></p>";};
+  if($responsecheck->success){} else {echo "<p class='text-danger text-center'><b>Hãy xác nhận bạn không phải là robot!</b></p>";};
   
   $lastname = $_POST["lastname"];
   $firstname = $_POST["firstname"];
@@ -26,7 +26,7 @@ if(isset($_POST['register'])){
   $sql = "SELECT * FROM account WHERE username = '$username' OR email = '$email'";
   $result = mysqli_query($conn, $sql);
   if (mysqli_num_rows($result) > 0){
-      echo '<script language="javascript">alert("Email hoặc tên đăng nhập đã có trên hệ thống!"); window.location="register.php";</script>';
+      echo '<script language="javascript">alert("Email hoặc tên đăng nhập đã có trên hệ thống, đã có tài khoản? vui lòng đăng nhập ở trang chủ!"); window.location="register.php";</script>';
       die ();
     } else {
       require_once('config.php');
@@ -54,11 +54,11 @@ if(isset($_POST['register'])){
           <option value="female">Nữ</option>
         </select> <br> <br>
         <label for="acccount">Email:</label>
-        <input type="email" id="" class="form-control" placeholder="Email của bạn..." name="email" require> <br> <br>
+        <input type="email" id="" class="form-control" placeholder="Điền email của bạn..." name="email" require> <br> <br>
         <label for="acccount">Số điện thoại:</label>
-        <input type="text" id="" class="form-control" placeholder="Số điện thoại của bạn..." name="phone" require> <br> <br>
+        <input type="text" id="" class="form-control" placeholder="Điền số điện thoại của bạn..." name="phone" require> <br> <br>
         <label for="acccount">Tên đăng nhập:</label>
-        <input type="text" id="" class="form-control" placeholder="Tên đăng nhập của bạn..." name="username" require> <br> <br>
+        <input type="text" id="" class="form-control" placeholder="Điền tên đăng nhập của bạn..." name="username" require> <br> <br>
         <label for="inputPassword">Mật khẩu:</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Mật khẩu của bạn..." name="password" require> <br> <br>
       <div class="g-recaptcha" data-sitekey="6LerrBEaAAAAAKsL0UogT5mW8eiYgCPwnbODg4rU" align="center"></div> <br>
