@@ -1,5 +1,5 @@
 <?php include('header.php'); ?>
-<title>ĐĂNG KÝ - mehoc.xyz</title>
+<title>ĐĂNG KÝ - mehoc.site</title>
 <?php
 if(isset($_POST['onback'])){
   header("location: index.php");
@@ -32,7 +32,7 @@ if(isset($_POST['register'])){
       require_once('config.php');
       $sql = "INSERT INTO account (last_name, first_name, sex, email, phone, username, password) 
                 VALUES ('$lastname', '$firstname', '$sex','$email', '$phone', '$username', '$password')";
-      if(mysqli_query($conn, $sql)){echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="login.php";</script>';};
+      if(mysqli_query($conn, $sql)){echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="/login.php";</script>';};
     };
 };
     

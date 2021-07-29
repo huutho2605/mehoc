@@ -73,7 +73,7 @@ if(isset($_GET['id'])){
         $dated = $row['dated']; $dated = strtotime($dated); $dated = date("d/m/Y H:i:s", $dated);
         echo '  <h1><b>Lớp '.$row['class'].' - '.$semester.' - '.$subject.' - '.$row['name'].' - '.$row['type'].' - '.$dated.'</b><b> <i>#'. $row['ID'] .'</i></b> <br> </h1>
                 <title>'.$file_name.' - mehoc.site</title>
-                <div align="center"><iframe src="https://mehoc.site/uploads/'.$file_id.'.pdf" width="100%" height="500"></iframe></div> <br>
+                <div align="center"><iframe src="uploads/'.$file_id.'.pdf" width="100%" height="500"></iframe></div> <br>
                 <b>Mã tài liệu:</b> '.$file_id .' <br>
                 <b>Tên tài liệu:</b> '.$file_name.' <br>
                 <b>Lớp:</b> '.$row['class'].' <br>
@@ -83,8 +83,8 @@ if(isset($_GET['id'])){
                 <b>Loại:</b> '.$file_type.' <br>
                 <b>Người đăng:</b> '.$file_author.' <br>
                 <b>Lượt xem:</b> '.$file_view.' <br> <br>
-                <a href="https://mehoc.site/uploads/'.$file_id.'.pdf">Xem online</a> <br> <br>
-                <a href="https://mehoc.site/uploads/'.$file_id.'.pdf" download>Tải xuống</a>
+                <a href="uploads/'.$file_id.'.pdf">Xem online</a> <br> <br>
+                <a href="uploads/'.$file_id.'.pdf" download>Tải xuống</a>
                 ';
         $count_view = $row['view']+1;
         $query2 = "UPDATE files SET view='$count_view' WHERE id='$file_id'";

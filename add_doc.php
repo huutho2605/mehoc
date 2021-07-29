@@ -4,6 +4,9 @@ if(!isset($_COOKIE['id_user'])){
     header('Location: https://mehoc.site/login');
 }
 include('header.php'); 
+
+$_POST['title_doc'] = '';
+
 if(isset($_POST['upload_file'])){
     if (!isset($_FILES["file_upload"])){
       echo "Dữ liệu không đúng cấu trúc";
@@ -14,7 +17,7 @@ if(isset($_POST['upload_file'])){
         echo "Dữ liệu upload bị lỗi";
     die;}
     require_once('config.php');
-    $target_file   = $target_dir . basename($_FILES["file_upload"]["name"]);
+    $target_file = $target_dir . basename($_FILES["file_upload"]["name"]);
     $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
     $file_name = $_POST['title_doc'];
     $size = $_FILES["file_upload"]["size"];
@@ -38,7 +41,7 @@ if(isset($_POST['upload_file'])){
 
 <form action="" method="post" enctype="multipart/form-data">
 <label for="">Tiêu đề: </label> <br>
-<textarea name="title_doc" cols="50" require><?php echo $_POST['title_doc'];?></textarea> <br> <br>
+<textarea name="title_doc" cols="50" require><?php echo $_POST['title_doc']; ?></textarea> <br> <br>
 <input type="file" name="file_upload" id=""> <br> <br>
 
 <select name="class" id="" required>

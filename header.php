@@ -18,12 +18,12 @@
   gtag('config', 'G-KM5JTBXNYE');
 </script>
 <?php if(isset($_COOKIE['username'])){
-    echo 'Chào, '. $_COOKIE['username'].' | <a href="https://mehoc.site/">TRANG CHỦ</a> 
-    | <a href="https://mehoc.site/doc.php">TÀI LIỆU</a> | <a href="https://mehoc.site/question.php">CÂU HỎI</a> 
-    | <a href="https://mehoc.site/add_doc.php">Thêm tài liệu</a> | <a href="https://mehoc.site/add_qs.php">Thêm câu hỏi</a>
-    | <a href="https://mehoc.site/profile.php">Tài khoản</a> | <a href="https://mehoc.site/process.php?logout">Đăng xuất<a> <br> <br>';
+    echo 'Chào, '. $_COOKIE['username'].' | <a href="/">TRANG CHỦ</a> 
+    | <a href="/doc.php">TÀI LIỆU</a> | <a href="/quiz">CÂU HỎI</a> 
+    | <a href="/add_doc.php">Thêm tài liệu</a> | <a href="/add_qs.php">Thêm câu hỏi</a>
+    | <a href="/profile.php">Tài khoản</a> | <a href="/process.php?logout">Đăng xuất<a> <br> <br>';
 } else {
-    echo '<div align="center"><a href="https://mehoc.site/login">ĐĂNG NHẬP</a> </div> <br <br>';
+    echo '<div align="center"><a href="/login">ĐĂNG NHẬP</a> </div> <br <br>';
 }; 
 ?>
 <body>
