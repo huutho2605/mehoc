@@ -109,13 +109,14 @@ if(isset($_GET['id'])){
 
     include('footer.php');
 } else {
+    echo '<title>HỎI ĐÁP - mehoc.site</title>
+    <h1 style="text-align: center">TÌM KIẾM CÂU HỎI</h1>';
     $conn = mysqli_connect("localhost", "root", "mehoc@2020", "mehoc");
     $query = "SELECT ID,question,answer_a,answer_b,answer_c,answer_d FROM questions ORDER BY ID DESC";
     $conn->set_charset("utf8");
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($result)) {
         echo '
-        <title>HỎI ĐÁP - mehoc.xyz</title>
         <b>Câu hỏi: </b>'. $row['question'] .'</h4> <b><i>#'. $row['ID'] .'</i></b> <br> 
             <b>A. </b>'. $row['answer_a'] .' <br> 
             <b>B. </b>'. $row['answer_b'] .' <br>
