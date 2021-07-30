@@ -1,9 +1,9 @@
 
 <?php
 if(isset($_POST['login'])){
+  require_once('../config.php');
   $username = $_POST['username'];
   $password = md5($_POST['password']);
-  $conn = mysqli_connect("localhost", "root", "mehoc@2020", "mehoc");
   $conn->set_charset("utf8");
   $sql = "SELECT * FROM account WHERE username='$username' and password='$password'";
   $conn->real_escape_string($sql);

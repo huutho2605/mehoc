@@ -107,14 +107,11 @@ if(isset($_GET['id'])){
     }
     if(empty($_COOKIE['username'])){ echo '<br> <br><a href="login.php">Tham gia góp câu hỏi ^^</a>'; };
 
-    include('footer.php');
+    include('../footer.php');
 } else {
-<<<<<<< HEAD
-=======
     echo '<title>HỎI ĐÁP - mehoc.site</title>
     <h1 style="text-align: center">TÌM KIẾM CÂU HỎI</h1>';
-    $conn = mysqli_connect("localhost", "root", "mehoc@2020", "mehoc");
->>>>>>> main
+    $conn = mysqli_connect("103.97.125.243", "mehocsit_root", "mehoc@2020", "mehocsit_mehoc");
     $query = "SELECT ID,question,answer_a,answer_b,answer_c,answer_d FROM questions ORDER BY ID DESC";
     $conn->set_charset("utf8");
     $result = mysqli_query($conn, $query);
