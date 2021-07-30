@@ -1,0 +1,23 @@
+<?php
+// Nếu thằng đó nhập vào nút quên mật khẩu =))
+if (isset($_POST['forgot-password'])) {
+    $email = $_POST['email'];
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errors['email'] = "Tài khoản email không hợp lệ!";
+     
+    }
+    if (empty($email)) {
+      $errors['email'] = "Cần phải nhập email"  
+    }
+
+    if (count($errors) ==0) {
+      $sql = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+      $result = mysqli_query($conn, $sql);
+      $user = mysqli_fetch_array($result);
+      $token = $user['token'];
+      sendPasswordReseyLink($user,$token);
+      header('location: password_message.php');
+      exit(0);  
+    }
+}

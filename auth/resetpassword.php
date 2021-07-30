@@ -34,7 +34,7 @@
                                     <button type="submit" class="btn btn-primary btn-block">Lấy lại mật khẩu của bạn</button>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="index.php" class="btn btn-link">Đăng Nhập</a>
+                                        <a href="login.php" class="btn btn-link">Đăng Nhập</a>
                                     </div>
                                 </div>
                            </form>
