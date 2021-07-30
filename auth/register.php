@@ -62,6 +62,6 @@ if(isset($_POST['register'])){
         <label for="inputPassword">Mật khẩu:</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Mật khẩu của bạn..." name="password" require> <br> <br>
       <div class="g-recaptcha" data-sitekey="6LerrBEaAAAAAKsL0UogT5mW8eiYgCPwnbODg4rU" align="center"></div> <br>
-      <input type="submit" name="onback" value="TRANG CHỦ"/> <input type="submit" name="register" value="ĐĂNG KÝ"/> 
+      <input type="button" onclick="window.location.href='/'" value="TRANG CHỦ"/> <input type="submit" name="login" value="ĐĂNG NHẬP"> <input type="submit" name="register" value="ĐĂNG KÝ"/> 
     </form>
 <?php include('../footer.php'); ?>

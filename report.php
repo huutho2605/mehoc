@@ -1,7 +1,7 @@
 <title>GÓP Ý - mehoc.site</title>
 <?php include('header.php'); 
 if(!isset($_COOKIE['username'])){
-    header('Location: login.php');
+    header('Location: /auth/login.php');
 }
 
 if(isset($_POST['report'])){

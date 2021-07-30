@@ -33,7 +33,7 @@ if(isset($_GET['logout'])){
     setcookie('id_user',$id_user, 0, "/");
     setcookie('username', $username, 0, "/");
     setcookie('fullname', $fullname, 0, "/");
-    header('Location: /login');
+    header('Location: /auth/login.php');
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 if(isset($_POST['add_gopy'])){

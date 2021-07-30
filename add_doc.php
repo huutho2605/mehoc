@@ -1,7 +1,7 @@
 <title>Thêm tài liệu - mehoc.site</title>
 <?php 
 if(!isset($_COOKIE['id_user'])){
-    header('Location: https://mehoc.site/login');
+    header('Location: /auth/login.php');
 }
 include('header.php'); 
 
