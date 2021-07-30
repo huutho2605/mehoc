@@ -1,9 +1,9 @@
 <?php include('../header.php');
-include('../config.php');
 
+include('../config.php');
 if(isset($_GET['id'])){
     $id_question = $_GET['id'];
-    $query = "SELECT * FROM questions WHERE id='$id_question'";
+    $query = "SELECT * FROM quiz WHERE id='$id_question'";
     $conn->set_charset("utf8");
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($result)) {
@@ -68,6 +68,7 @@ if(isset($_GET['id'])){
         $dated = $row['dated']; $dated = strtotime($dated); $dated = date("d/m/Y H:i:s", $dated);
         echo '
         <title>'. $row['question'] .' - mehoc.site</title>
+        <a href="javascript:history.back()">Trở về trang trước...</a><br> <br>
         <b>CÂU HỎI: </b>'. $row['question'] .'</h4> <b><i>#'. $row['ID'] .'</i></b> <br> <br>
             <b>A. </b>'. $row['answer_a'] .' <br> 
             <b>B. </b>'. $row['answer_b'] .' <br>
@@ -81,9 +82,9 @@ if(isset($_GET['id'])){
         <b>Học kỳ:</b> '.$semester.' <br>
         <b>Thời gian: </b>'. $row['dated'] .'<br>
         <b>Lượt xem: </b>'. $row['view'] .' <br> <br>
-        <a href="report.php?id='.$id_question.'">Câu hỏi có vấn đề...</a> <br> <br>'; 
+        <a href="/report.php?id='.$id_question.'">Câu hỏi có vấn đề...</a> <br> <br>'; 
         $count_view = $row['view']+1;
-        $query2 = "UPDATE questions SET view='$count_view' WHERE id='$id_question'";
+        $query2 = "UPDATE quiz SET view='$count_view' WHERE id='$id_question'";
         if (mysqli_query($conn, $query2)) {
         } else {
             echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
@@ -108,25 +109,5 @@ if(isset($_GET['id'])){
     if(empty($_COOKIE['username'])){ echo '<br> <br><a href="login.php">Tham gia góp câu hỏi ^^</a>'; };
 
     include('../footer.php');
-} else {
-    echo '<title>HỎI ĐÁP - mehoc.site</title>
-    <h1 style="text-align: center">TÌM KIẾM CÂU HỎI</h1>';
-    include('../search.php');
-    $conn = mysqli_connect("103.97.125.243", "mehocsit_root", "mehoc@2020", "mehocsit_mehoc");
-    $query = "SELECT ID,question,answer_a,answer_b,answer_c,answer_d FROM questions ORDER BY ID DESC";
-    $conn->set_charset("utf8");
-    $result = mysqli_query($conn, $query);
-    while ($row = mysqli_fetch_array($result)) {
-        echo '
-        <b>Câu hỏi: </b>'. $row['question'] .'</h4> <b><i>#'. $row['ID'] .'</i></b> <br> 
-            <b>A. </b>'. $row['answer_a'] .' <br> 
-            <b>B. </b>'. $row['answer_b'] .' <br>
-            <b>C. </b>'. $row['answer_c'] .' <br> 
-            <b>D. </b>'. $row['answer_d'] .' <br> 
-        <a href="?id='.$row['ID'].'" class="btn btn-primary">Tiếp tục...</a> <br> <br>
-      </div>
-    </div>';
-      }
-      include('footer.php');
 }
 ?>

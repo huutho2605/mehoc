@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-     <meta charset="utf-8" />
-     <title>Danh sách tài khoản</title>
-     <style>.list{border-collapse: collapse; margin: 0 auto; width: 84%;} .list tr
-     th{background: #ebebeb;} .list img{width: 32px:} .seach-form{position: relative; left: 7%;}
-     </style>
-</head>     
-<body>
+<?php
+if(isset($_GET['submit'])){
+    header('Location: webhp.php');
+}
+$search = $_GET['q'];
+echo '
+<h1>MÊ HỌC</h1><form action="search.php" method="get">
+<input type="text" name="q" value="'.$search.'">
+<input type="submit" value="Tìm kiếm">
+</form>';
+// echo $search;
+include('config.php');
+$sql = "SELECT * FROM quiz WHERE question LIKE '%$search%'";
+$result = mysqli_query($conn, $sql);
+while($row = mysqli_fetch_assoc($result))
+{
+    echo '
+        <b>Câu hỏi: </b>'. $row['question'] .'</h4> <b><i>#'. $row['ID'] .'</i></b> <br> 
+            <b>A. </b>'. $row['answer_a'] .' <br> 
+            <b>B. </b>'. $row['answer_b'] .' <br>
+            <b>C. </b>'. $row['answer_c'] .' <br> 
+            <b>D. </b>'. $row['answer_d'] .' <br> 
+        <a href="quiz?id='.$row['ID'].'" class="btn btn-primary">Tiếp tục...</a> <br> <br>
+      </div>
+    </div>';
+}
 
-    <table class="search-form" callpadding="10">
-    <tr>
-        <td>
-             <form action=""method="get"> 
-             <input type="text" name="q" placeholder="Nhập từ khóa cần tìm" value="<?php if(isset($_GET('q'))) { echo $_GET('q'); }?>" /> 
-             <input type="submit" value="Tìm" />
-             <input type="button" value="Tất cả" onclick="window.location.href='/quiz'"/>
-         </form>
-     </td>
- </tr>
- </table>
- </body>
-</html>
+?>

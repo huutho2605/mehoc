@@ -1,5 +1,7 @@
 <title>GÓP Ý - mehoc.site</title>
-<?php include('header.php'); 
+<?php 
+include('header.php'); 
+include('config.php');
 if(!isset($_COOKIE['username'])){
     header('Location: /auth/login.php');
 }
@@ -21,9 +23,9 @@ if(isset($_POST['report'])){
 
 
 if(isset($_GET['id'])){
+    $_POST['content_report'] = '';
     $id_qs = $_GET['id'];
-    $conn = mysqli_connect("103.97.125.243", "mehocsit_root", "mehoc@2020", "mehocsit_mehoc");
-    $query = "SELECT * FROM questions WHERE id='$id_qs'";
+    $query = "SELECT * FROM quiz WHERE id='$id_qs'";
     $conn->set_charset("utf8");
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($result)) {

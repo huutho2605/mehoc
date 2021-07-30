@@ -18,10 +18,9 @@
   gtag('config', 'G-KM5JTBXNYE');
 </script>
 <?php if(isset($_COOKIE['username'])){
-    echo 'Chào, '. $_COOKIE['username'].' | <a href="/">TRANG CHỦ</a> 
+    echo '<div align="center">Chào, '. $_COOKIE['username'].' | <a href="/">TRANG CHỦ</a> 
     | <a href="/doc.php">TÀI LIỆU</a> | <a href="/quiz">CÂU HỎI</a> 
-    | <a href="/add_doc.php">Thêm tài liệu</a> | <a href="/add_qs.php">Thêm câu hỏi</a>
-    | <a href="/profile.php">Tài khoản</a> | <a href="/process.php?logout">Đăng xuất<a> <br> <br>';
+    | <a href="/profile.php">Tài khoản</a> | <a href="/process.php?logout">Đăng xuất<a> <br> <br></div>';
 } else {
     echo '<div align="center"><a href="/auth/login.php">ĐĂNG NHẬP</a> </div> <br <br>';
 }; 
