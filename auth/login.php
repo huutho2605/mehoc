@@ -35,7 +35,7 @@ if(isset($_COOKIE['error'])){
 }
 ?>
 <form align="center" action="login.php" method="POST">
-  <img src="../icon/favicon.svg" width="72" height="72">
+  <img src="../icons/favicon.svg" width="72" height="72">
   <h1>ĐĂNG NHẬP</h1>
   <label>Tên tài khoản: </label>
   <input type="text" placeholder="Điền tên đăng nhập của bạn..." name="username"> <br> <br>
