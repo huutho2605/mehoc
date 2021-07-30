@@ -88,7 +88,7 @@ if(isset($_POST['upload_file'])){
 <input type="text" name="school" id="">
 
 <br> <br>
-<input type="submit" value="upload_file" name="upload_file">
+<input type="submit" value="Thêm vào tài liệu" name="Thêm vào tài liệu">
 
 </form>
 

@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('../header.php'); ?>
 <title>ĐĂNG KÝ - mehoc.site</title>
 <?php
 if(isset($_POST['onback'])){

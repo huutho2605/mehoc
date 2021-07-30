@@ -25,5 +25,6 @@
 } else {
     echo '<div align="center"><a href="/auth/login.php">ĐĂNG NHẬP</a> </div> <br <br>';
 }; 
+
 ?>
 <body>
