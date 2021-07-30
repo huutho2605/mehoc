@@ -1,8 +1,8 @@
 <?php include('../header.php');
+include('../config.php');
 
 if(isset($_GET['id'])){
     $id_question = $_GET['id'];
-    $conn = mysqli_connect("localhost", "root", "mehoc@2020", "mehoc");
     $query = "SELECT * FROM questions WHERE id='$id_question'";
     $conn->set_charset("utf8");
     $result = mysqli_query($conn, $query);
@@ -109,7 +109,6 @@ if(isset($_GET['id'])){
 
     include('footer.php');
 } else {
-    $conn = mysqli_connect("localhost", "root", "mehoc@2020", "mehoc");
     $query = "SELECT ID,question,answer_a,answer_b,answer_c,answer_d FROM questions ORDER BY ID DESC";
     $conn->set_charset("utf8");
     $result = mysqli_query($conn, $query);
