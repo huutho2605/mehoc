@@ -1,13 +1,14 @@
 <?php
+include 'header.php';
 if(isset($_GET['submit'])){
     header('Location: webhp.php');
 }
 $search = $_GET['q'];
-echo '
+echo'
 <h1>MÊ HỌC</h1><form action="search.php" method="get">
 <input type="text" name="q" value="'.$search.'">
 <input type="submit" value="Tìm kiếm">
-</form>';
+</form> <br>';
 // echo $search;
 include('config.php');
 $sql = "SELECT * FROM quiz WHERE question LIKE '%$search%'";
@@ -26,3 +27,4 @@ while($row = mysqli_fetch_assoc($result))
 }
 
 ?>
+<?php include 'footer.php'; ?>

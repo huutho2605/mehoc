@@ -95,6 +95,7 @@ if(isset($_GET['id'])){
         mysqli_close($conn);
     };
 } else {
+    echo '<br> <br>';
     require_once('config.php');
     $query = "SELECT * FROM files ORDER BY ID DESC";
     $result = mysqli_query($conn, $query);
@@ -159,7 +160,7 @@ if(isset($_GET['id'])){
         }
         $dated = $row['dated']; $dated = strtotime($dated); $dated = date("d/m/Y H:i:s", $dated);
         echo '
-        <title>TÀI LIỆU - mehoc.xyz</title>
+        <title>TÀI LIỆU - mehoc.site</title>
         <b>[Lớp '.$row['class'].'] - ['.$semester.'] - ['.$subject.'] - '.$row['name'].' - ['.$row['type'].'] - ['.$dated.']</b><b> <i>#'. $row['ID'] .'</i></b> <br> 
         <a href="?id='.$row['ID'].'" class="btn btn-primary">Tiếp tục...</a> <br> <br>
       </div>
