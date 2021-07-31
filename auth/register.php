@@ -9,7 +9,7 @@ if(isset($_POST['onback'])){
 };
 
 if(isset($_POST['register'])){
-  $secret_key = '6LerrBEaAAAAAEB-Hd8YATd1RKCFWaja3yD36IR9';
+  $secret_key = '6LeSms8bAAAAABbJ3EFQRhS2xC89V--kfskCg8Y3';
   $response = $_POST['g-recaptcha-response'];
   $userIP = $_SERVER['REMOTE_ADDR'];
   $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secret_key&response=$response&remoteip=$userIP";
@@ -64,7 +64,7 @@ if(isset($_POST['register'])){
         <input type="text" id="" class="form-control" placeholder="Điền tên đăng nhập của bạn..." name="username" require> <br> <br>
         <label for="inputPassword">Mật khẩu:</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Mật khẩu của bạn..." name="password" require> <br> <br>
-      <div class="g-recaptcha" data-sitekey="6LerrBEaAAAAAKsL0UogT5mW8eiYgCPwnbODg4rU" align="center"></div> <br>
+      <div class="g-recaptcha" data-sitekey="6LeSms8bAAAAAPB6hHIDoHsCvA4zi3dNqRP_408I" align="center"></div> <br>
       <input type="button" onclick="window.location.href='/'" value="TRANG CHỦ"/> <input type="submit" name="login" value="ĐĂNG NHẬP"> <input type="submit" name="register" value="ĐĂNG KÝ"/> 
     </form>
 <?php include('../footer.php'); ?>
