@@ -11,7 +11,7 @@ echo'
 </form> <br>';
 // echo $search;
 include('config.php');
-$sql = "SELECT * FROM quiz WHERE question LIKE '%$search%'";
+$sql = "SELECT * FROM quiz WHERE question LIKE '%$search%' OR answer_a LIKE '%$search%' OR answer_b LIKE '%$search%' OR answer_c LIKE '%$search%' OR answer_d LIKE '%$search%'";
 $result = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_assoc($result))
 {

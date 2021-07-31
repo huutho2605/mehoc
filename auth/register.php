@@ -45,7 +45,7 @@ if(isset($_POST['register'])){
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"async defer></script>
 <form action="register.php" method="post" align="center">
         <img src="<?php echo $domain_storage; ?>/icons/favicon.svg" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">ĐĂNG KÝ</h1>
+        <h1 class="h3 mb-3 font-weight-normal" style="margin-top: 30px">ĐĂNG KÝ</h1>
         <label for="acccount">Họ:</label>
         <input type="text" id="" class="form-control" placeholder="Họ của bạn..." name="lastname" require> <br> <br>
         <label for="acccount">Tên:</label>
