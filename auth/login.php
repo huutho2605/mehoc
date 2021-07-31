@@ -13,9 +13,11 @@ if(isset($_POST['login'])){
       while ($row1 = mysqli_fetch_array($result)) {
           $id_user = $row1['ID'];
           $fullname = $row1['last_name'] .' '. $row1['first_name'];
+          $permission = $row1['permission'];
           setcookie('id_user', $id_user, time() + (86400 * 30), "/");
           setcookie('username', $username, time() + (86400 * 30), "/");
           setcookie('fullname', $fullname, time() + (86400 * 30), "/");
+          setcookie('permission', $permission, time() + (86400 * 30), "/");
           header('Location: /');
       }
   } else {

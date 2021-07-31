@@ -2,6 +2,9 @@
 if(!isset($_COOKIE['id_user'])){
     header('Location: /auth/login.php');
 }
+if($_COOKIE['permission'] !== '2'){
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+}
 include 'header.php';
 ?>
 <title>HỆ THÔNG QUẢN TRỊ - MeHoc.Site</title>

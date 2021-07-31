@@ -29,7 +29,7 @@ if(!isset($_COOKIE['username'])){
                 break;
         }
         echo '
-            <div align="center">
+            <div align="center" style="margin-top: 30px">
                 <img src="'.$domain_storage.'/icons/'.$avt.'"> <br>
                 <b>ID: </b> '.$id_user.' <br>
                 <b>Username: </b> '.$username.'<br>
