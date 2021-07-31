@@ -1,1 +1,1 @@
-<div align="center"><a href="/add_doc.php">Thêm tài liệu</a> | <a href="/add_qs.php">Thêm câu hỏi</a></div>
+<div align="center"><a href="add_doc.php">Thêm tài liệu</a> | <a href="add_quiz.php">Thêm câu hỏi</a></div>

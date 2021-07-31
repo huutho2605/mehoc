@@ -20,6 +20,7 @@ if(isset($_POST['register'])){
   $lastname = $_POST["lastname"];
   $firstname = $_POST["firstname"];
   $sex = $_POST["sex"];
+  $birthday = $_POST["birthday"];
   $email = $_POST["email"];
   $phone = $_POST["phone"];
   $username = $_POST["username"];
@@ -33,19 +34,17 @@ if(isset($_POST['register'])){
       die ();
     } else {
       require_once('config.php');
-      $sql = "INSERT INTO account (last_name, first_name, sex, email, phone, username, password) 
-                VALUES ('$lastname', '$firstname', '$sex','$email', '$phone', '$username', '$password')";
+      $sql = "INSERT INTO account (last_name, first_name, sex, birthday, email, phone, username, password) 
+                VALUES ('$lastname', '$firstname', '$sex', '$birthday','$email', '$phone', '$username', '$password')";
       if(mysqli_query($conn, $sql)){echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="/login.php";</script>';};
     };
-};
-    
+}; 
 ?>
-
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"async defer></script>
 <form action="register.php" method="post" align="center">
-        <img src="<?php echo $domain_storage; ?>/icon/favicon.svg" width="72" height="72">
+        <img src="<?php echo $domain_storage; ?>/icons/favicon.svg" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">ĐĂNG KÝ</h1>
         <label for="acccount">Họ:</label>
         <input type="text" id="" class="form-control" placeholder="Họ của bạn..." name="lastname" require> <br> <br>
@@ -56,6 +55,8 @@ if(isset($_POST['register'])){
           <option value="male">Nam</option>
           <option value="female">Nữ</option>
         </select> <br> <br>
+        <label for="date">Sinh nhật:</label>
+        <input type="date" name="birthday"> <br> <br>
         <label for="acccount">Email:</label>
         <input type="email" id="" class="form-control" placeholder="Điền email của bạn..." name="email" require> <br> <br>
         <label for="acccount">Số điện thoại:</label>

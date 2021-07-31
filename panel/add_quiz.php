@@ -35,6 +35,7 @@ if(isset($_POST['add_qs'])){
                                     ('$question', '$answer_a', '$answer_b', '$answer_c', '$answer_d', '$answer', '$solution', '$auther', 0, 0, '$class', '$subject', '$semester')";
     if (mysqli_query($conn, $query)) {
         echo 'Thêm câu hỏi thành thành công.<br>';
+        header('Location: '.$_SERVER['REQUEST_URI']);
     } else {
         echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
     }

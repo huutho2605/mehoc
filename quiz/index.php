@@ -62,13 +62,13 @@ if(isset($_GET['id'])){
                     $semester = "HK2";
                 break;
             default:
-                    $semester = "Loand...";
+                    $semester = "Loanding...";
                 break;
         }
         $dated = $row['dated']; $dated = strtotime($dated); $dated = date("d/m/Y H:i:s", $dated);
         echo '
         <title>'. $row['question'] .' - mehoc.site</title>
-        <a href="javascript:history.back()">Trở về trang trước...</a><br> <br>
+        <a href="javascript:history.back()" style="margin-top: 30px">Trở về trang trước...</a><br> <br>
         <b>CÂU HỎI: </b>'. $row['question'] .'</h4> <b><i>#'. $row['ID'] .'</i></b> <br> <br>
             <b>A. </b>'. $row['answer_a'] .' <br> 
             <b>B. </b>'. $row['answer_b'] .' <br>
