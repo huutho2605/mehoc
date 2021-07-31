@@ -37,7 +37,7 @@ if(!isset($_COOKIE['username'])){
                 <b>Sinh nhật: </b> '.$birthday.'<br>
                 <b>Giới tính: </b> '.$sex.'<br>
                 <b>Email:</b> </b> '.$email.'<br>
-                <b>Ngày đăng kí tài khoảng: </b> '.$registered.'
+                <b>Ngày đăng kí tài khoản: </b> '.$registered.'
             </div>
         ';
     };
