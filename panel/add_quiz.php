@@ -42,7 +42,7 @@ if(isset($_POST['add_qs'])){
 };
 ?>
 <button onclick="window.location.href='edit_quiz.php'">CHỈNH SỬA CÂU HỎI</button>
-<form action="add_qs.php" method="POST">
+<form action="add_quiz.php" method="POST">
 <div class="form-group">
     <label>CÂU HỎI:</label> <br>
     <textarea name="question" cols="30" rows="3" required><?php echo $question; ?></textarea> <br> 
