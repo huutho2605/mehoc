@@ -30,7 +30,7 @@ if(!isset($_COOKIE['username'])){
         }
         echo '
             <div align="center">
-                <img src="'.$domain_storage.$avt.'"> <br>
+                <img src="'.$domain_storage.'/icons/'.$avt.'"> <br>
                 <b>ID: </b> '.$id_user.' <br>
                 <b>Username: </b> '.$username.'<br>
                 <b>Họ và tên: </b> '.$full_name.'<br>
