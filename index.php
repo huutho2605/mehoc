@@ -17,6 +17,7 @@ if (mysqli_num_rows($result_account) > 0)
 };
 
 ?>
+    <meta name="description" content="Mê Học Mang tri thức đến kế bên bạn.">
     <title>MÊ HỌC - MeHoc.Site</title>
     <div align="center">
     <h1>MÊ HỌC</h1>
