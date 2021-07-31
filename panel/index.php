@@ -1,4 +1,4 @@
-<title>Thêm câu hỏi - mehoc.xyz</title>
+<title>Thêm câu hỏi - mehoc.site</title>
 <?php 
 include('header.php'); 
 if(!isset($_COOKIE['id_user'])){

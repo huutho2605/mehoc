@@ -1,7 +1,7 @@
 
 <?php
+include '../config.php';
 if(isset($_POST['login'])){
-  require_once('../config.php');
   $username = $_POST['username'];
   $password = md5($_POST['password']);
   $conn->set_charset("utf8");
@@ -35,7 +35,7 @@ if(isset($_COOKIE['error'])){
 }
 ?>
 <form align="center" action="login.php" method="POST">
-  <img src="../icons/favicon.svg" width="72" height="72">
+  <img src="<?php echo $domain_storage; ?>/icons/favicon.svg" width="72" height="72">
   <h1>ĐĂNG NHẬP</h1>
   <label>Tên tài khoản: </label>
   <input type="text" placeholder="Điền tên đăng nhập của bạn..." name="username"> <br> <br>
