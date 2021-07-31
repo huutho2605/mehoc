@@ -41,7 +41,7 @@ if(isset($_POST['add_qs'])){
     mysqli_close($conn);
 };
 ?>
-<button onclick="window.location.href='edit_quiz.php'">CHỈNH SỬA CÂU HỎI</button>
+<button onclick="window.location.href='add_quiz.php'">THÊM CÂU HỎI</button>
 <form action="add_qs.php" method="POST">
 <div class="form-group">
     <label>CÂU HỎI:</label> <br>
