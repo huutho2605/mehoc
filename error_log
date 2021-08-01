@@ -1,3 +1,0 @@
-[01-Aug-2021 03:46:57 UTC] PHP Notice:  Undefined variable: id_user in /home/mehocsit/public_html/process.php on line 33
-[01-Aug-2021 03:46:57 UTC] PHP Notice:  Undefined variable: username in /home/mehocsit/public_html/process.php on line 34
-[01-Aug-2021 03:46:57 UTC] PHP Notice:  Undefined variable: fullname in /home/mehocsit/public_html/process.php on line 35
