@@ -16,7 +16,6 @@ if(isset($_POST['register'])){
   $responsecheck = file_get_contents($url);
   $responsecheck = json_decode($responsecheck);
   if($responsecheck->success){} else {echo "<p class='text-danger text-center'><b>Hãy xác nhận bạn không phải là robot!</b></p>";};
-  
   $lastname = $_POST["lastname"];
   $firstname = $_POST["firstname"];
   $sex = $_POST["sex"];
@@ -25,18 +24,15 @@ if(isset($_POST['register'])){
   $phone = $_POST["phone"];
   $username = $_POST["username"];
   $password = md5($_POST["password"]);
-
-  require_once('config.php');
   $sql = "SELECT * FROM account WHERE username = '$username' OR email = '$email'";
   $result = mysqli_query($conn, $sql);
   if (mysqli_num_rows($result) > 0){
       echo '<script language="javascript">alert("Email hoặc tên đăng nhập đã có trên hệ thống, đã có tài khoản? vui lòng đăng nhập ở trang chủ!"); window.location="register.php";</script>';
       die ();
     } else {
-      require_once('config.php');
-      $sql = "INSERT INTO account (last_name, first_name, sex, birthday, email, phone, username, password) 
-                VALUES ('$lastname', '$firstname', '$sex', '$birthday','$email', '$phone', '$username', '$password')";
-      if(mysqli_query($conn, $sql)){echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="/login.php";</script>';};
+      $sql = "INSERT INTO account (last_name, first_name, sex, email, phone, username, password) 
+                VALUES ('$lastname', '$firstname', '$sex','$email', '$phone', '$username', '$password')";
+      if(mysqli_query($conn, $sql)){echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="/auth/login.php";</script>';};
     };
 }; 
 ?>
@@ -92,6 +88,7 @@ if(isset($_POST['register'])){
         <label for="inputPassword">Mật khẩu:</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Mật khẩu của bạn..." name="password" require> <br> <br>
       <div class="g-recaptcha" data-sitekey="6LeSms8bAAAAAPB6hHIDoHsCvA4zi3dNqRP_408I" align="center"></div> <br>
-      <input type="button" onclick="window.location.href='/'" value="TRANG CHỦ"/> <input type="submit" name="login" value="ĐĂNG NHẬP"> <input type="submit" name="register" value="ĐĂNG KÝ"/> 
+      <input type="button" onclick="window.location.href='/'" value="TRANG CHỦ"/> <input type="submit" name="login" value="ĐĂNG NHẬP"> 
+      <input type="submit" name="register" value="ĐĂNG KÝ"/> 
     </form>
 <?php include('../footer.php'); ?>

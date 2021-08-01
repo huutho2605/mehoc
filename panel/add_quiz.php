@@ -31,7 +31,7 @@ if(isset($_POST['add_qs'])){
     $auther = $_COOKIE["id_user"];
     $solution = $POST['solution'];
     require_once('../config.php');
-    $query = "INSERT INTO questions (question, answer_a, answer_b, answer_c, answer_d, answer, solution, author, verify, view , class, subject,semester) VALUES 
+    $query = "INSERT INTO quiz (question, answer_a, answer_b, answer_c, answer_d, answer, solution, author, verify, view , class, subject,semester) VALUES 
                                     ('$question', '$answer_a', '$answer_b', '$answer_c', '$answer_d', '$answer', '$solution', '$auther', 0, 0, '$class', '$subject', '$semester')";
     if (mysqli_query($conn, $query)) {
         echo 'Thêm câu hỏi thành thành công.<br>';
